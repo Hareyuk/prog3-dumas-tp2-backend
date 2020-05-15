@@ -17,18 +17,12 @@ const crudTiendas = (app) => {
     console.log("POST");
 
     console.log(req.body);
-
     var tienda = new Tienda({
       lat: req.body.lat,
-
       lng: req.body.lng,
-
       name: req.body.name,
-
       description: req.body.description,
-
       website: req.body.website,
-
       type: req.body.type,
     });
 
@@ -82,6 +76,6 @@ const crudTiendas = (app) => {
   app.get("/tiendajuegos", findAllShops);
   app.post("/tiendajuegos", addShop);
   app.put("/tiendajuegos", modifyShop);
-  app.delete("/tiendajuegos", deleteShop)
+  app.delete("/tiendajuegos", deleteShop);
 };
 module.exports = crudTiendas;

@@ -13,6 +13,21 @@
       "methods": ["GET"]
     },
     {
+      "src": "/tiendajuegos",
+      "dest": "/app.js",
+      "methods": ["POST"]
+    },
+    {
+      "src": "/tiendajuegos/(?<id>[^/]+)",
+      "dest": "/app.js/?id=$id",
+      "methods": ["DELETE"]
+    },
+    {
+      "src": "/tiendajuegos/(?<id>[^/]+)",
+      "dest": "/app.js/?id=$id",
+      "methods": ["PUT"]
+    },
+    {
       "src": "/",
       "dest": "/app.js",
       "methods": ["GET"]
