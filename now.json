@@ -11,18 +11,26 @@
 
   "routes": [
     {
+      "src": ".*",
+      "methods": ["GET", "POST", "DELETE", "PUT", "OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "*",
+        "Access-Control-Allow-Headers": "Origin, X-Requested-With, Content-Type, Accept",
+        "Access-Control-Allow-Credentials": "true"
+      },
+      "dest": "app.js",
+      "continue": true
+    },
+
+    {
       "src": "/tiendajuegos/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
-      "methods": [
-          "DELETE"
-      ]
+      "methods": ["DELETE"]
     },
     {
       "src": "/tiendajuegos/(?<id>[^/]+)",
       "dest": "/app.js/?id=$id",
-      "methods": [
-          "PUT"
-      ]
+      "methods": ["PUT"]
     },
     {
       "src": "/tiendajuegos",
@@ -34,9 +42,7 @@
     {
       "src": "/tiendajuegos",
       "dest": "/app.js",
-      "methods": [
-          "POST"
-      ]
+      "methods": ["POST"]
     },
     {
       "src": "/",
