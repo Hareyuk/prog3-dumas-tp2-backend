@@ -59,8 +59,8 @@ const crudTiendas = (app) => {
   };
 
   //DELETE
-  deleteShop = function (req, res) {
-    Shops.findById(req.params.name, function (err, shop) {
+  deleteTiendaJuego = function (req, res) {
+    Shops.findById(req.params.id, function (err, shop) {
       shop.remove(function (err) {
         if (!err) {
           console.log("Removed");
@@ -75,7 +75,7 @@ const crudTiendas = (app) => {
   //URLS
   app.get("/tiendajuegos", findAllShops);
   app.post("/tiendajuegos", addShop);
-  app.put("/tiendajuegos", modifyShop);
-  app.delete("/tiendajuegos", deleteShop);
+  app.put("/tiendajuegos/:id", modifyShop);
+  app.delete("/tiendajuegos/:id", deleteTiendaJuego);
 };
 module.exports = crudTiendas;
