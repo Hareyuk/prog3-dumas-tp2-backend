@@ -4,7 +4,6 @@
   "builds": [
     {
       "src": "app.js",
-
       "use": "@now/node-server"
     }
   ],
@@ -43,13 +42,6 @@
       "src": "/tiendajuegos",
       "dest": "/app.js",
       "methods": ["POST"]
-    },
-    {
-      "src": "/",
-
-      "dest": "/app.js",
-
-      "methods": ["GET"]
     }
   ]
 }
