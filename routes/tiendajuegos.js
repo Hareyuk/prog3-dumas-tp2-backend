@@ -1,10 +1,10 @@
 const crudTiendas = (app) => {
-  const Shops = require("../models/tiendajuegos.js");
+  const TiendaJuego = require("../models/tiendajuegos.js");
 
   //Funciones de endpoint
   //GET - devuelve todas las collections
   findAllShops = (req, res) => {
-    Shops.find((err, shops) => {
+    TiendaJuego.find((err, shops) => {
       if (!err) {
         console.log("GET /tiendajuegos");
         res.send(shops);
@@ -17,7 +17,7 @@ const crudTiendas = (app) => {
     console.log("POST");
 
     console.log(req.body);
-    var tienda = new Tienda({
+    var tienda = new TiendaJuego({
       lat: req.body.lat,
       lng: req.body.lng,
       name: req.body.name,
@@ -39,7 +39,7 @@ const crudTiendas = (app) => {
 
   //PUT
   modifyShop = function (req, res) {
-    Shops.findById(req.params.id, function (err, shop) {
+    TiendaJuego.findById(req.params.id, function (err, shop) {
       shop.lat = req.body.lat;
       shop.lng = req.body.lng;
       shop.name = req.body.name;
@@ -60,7 +60,7 @@ const crudTiendas = (app) => {
 
   //DELETE
   deleteTiendaJuego = function (req, res) {
-    Shops.findById(req.params.id, function (err, shop) {
+    TiendaJuego.findById(req.params.id, function (err, shop) {
       shop.remove(function (err) {
         if (!err) {
           console.log("Removed");

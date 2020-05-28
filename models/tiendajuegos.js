@@ -10,4 +10,4 @@ var collectionSchema = new Schema({
     type: {type: String}
 });
 
-module.exports = mongoose.model('TiendaJuegos', collectionSchema, 'tiendajuegos' );
+module.exports = mongoose.model('TiendaJuego', collectionSchema, 'tiendajuegos' );
